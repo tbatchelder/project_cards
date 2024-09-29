@@ -1,14 +1,23 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import Trick from './components/Trick';
 
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>Hi Baby and Emblem</h1>
+      <header className='main-nav'>
+        <h1>Find the Best Dog Tricks</h1>
+        <p>Everything you and Blue need to impress.</p>
+      </header>
+      <div className='content'>
+        <div className='cards-container'>
+          <div className='card'>
+            <p>Basic</p>
+            <Trick />
+          </div>
+        </div>
+      </div>
     </>
   )
 }
