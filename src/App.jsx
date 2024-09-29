@@ -4,6 +4,13 @@ import Trick from './components/Trick';
 function App() {
   // const [count, setCount] = useState(0)
 
+  const dogTricks = [
+    { title: "Sit", category: "Basic", description: "Dog sits down on its hind legs." },
+    { title: "Stay", category: "Basic", description: "Dog remains in the same spot." },
+    { title: "Shake Hands", category: "Basic", description: "Dog shakes hands." },
+    { title: "Fetch", category: "Basic", description: "Dog gets stick."}
+  ]
+
   return (
     <>
       <header className='main-nav'>
@@ -12,10 +19,8 @@ function App() {
       </header>
       <div className='content'>
         <div className='cards-container'>
-          <div className='card'>
-            <p>Basic</p>
-            <Trick />
-          </div>
+          {dogTricks.map((trick) => { return (<Trick key={trick.title} category={trick.category} title={trick.title} description={trick.description} />) })}
+          
         </div>
       </div>
     </>

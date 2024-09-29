@@ -1,8 +1,12 @@
-function Trick() {
+
+function Trick({ category, title, description }) {
   return (
     <>
-      <h2>Sit</h2>
-      <p>Dog sits down on its hind legs</p>
+      <div className="card">
+        <p>{category}</p>
+        <h2>{title}</h2>
+        <p>{description}</p>
+      </div>
     </>
   );
 }
