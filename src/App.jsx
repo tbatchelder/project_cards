@@ -6,16 +6,34 @@ function App() {
 
   const dogTricks = [
     { title: "Sit", category: "Basic", description: "Dog sits down on its hind legs." },
-    { title: "Stay", category: "Basic", description: "Dog remains in the same spot." },
-    { title: "Shake Hands", category: "Basic", description: "Dog shakes hands." },
-    { title: "Fetch", category: "Basic", description: "Dog gets stick."}
+    { title: "Stay", category: "Self-Control", description: "Dog remains in the same spot." },
+    { title: "Shake Hands", category: "Communication", description: "Dog shakes hands." },
+    { title: "Fetch", category: "Utility", description: "Dog gets stick."}
   ]
 
+  const category = [
+    "All",
+    "Basic",
+    "Acting",
+    "Communication",
+    "Agility",
+    "Scent Work",
+    "Affection",
+    "Self-Control",
+    "Utility",
+    "Cute Tricks"
+  ];
+
+  const handleClick = (category) => { console.log(category) }
+  
   return (
     <>
       <header className='main-nav'>
         <h1>Find the Best Dog Tricks</h1>
         <p>Everything you and Blue need to impress.</p>
+        <div className='category-nav'>
+          {category.map((cat) => {return (<button key={cat} onClick={()=>handleClick(cat)}>{cat}</button>)})}
+        </div>
       </header>
       <div className='content'>
         <div className='cards-container'>
