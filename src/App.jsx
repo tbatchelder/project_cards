@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import Trick from './components/Trick';
 
@@ -24,7 +25,17 @@ function App() {
     "Cute Tricks"
   ];
 
-  const handleClick = (category) => { console.log(category) }
+  const handleClick = (category) => {
+    // console.log(category) 
+    if (category === "All") {
+      setFilteredTricks(dogTricks)
+    } else {
+      const newTricks = dogTricks.filter(trick => trick.category === category)
+      setFilteredTricks(newTricks)
+    }
+  }
+
+  const [filteredTricks, setFilteredTricks] = useState(dogTricks);
   
   return (
     <>
@@ -37,7 +48,7 @@ function App() {
       </header>
       <div className='content'>
         <div className='cards-container'>
-          {dogTricks.map((trick) => { return (<Trick key={trick.title} category={trick.category} title={trick.title} description={trick.description} />) })}
+          {filteredTricks.map((trick) => { return (<Trick key={trick.title} category={trick.category} title={trick.title} description={trick.description} />) })}
           
         </div>
       </div>
