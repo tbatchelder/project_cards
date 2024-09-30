@@ -65,3 +65,19 @@ html, body {
   width: 200px;
   transition: transform 0.3s ease;
 }
+.card:hover {
+  transform: scale(1.05);
+  background-color: #6a9ae2;
+  cursor: pointer;
+}
+.category-button {
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  margin-right: 5px;
+  background-color: #6a9ae2;
+}
+.categoryButton:hover {
+  transform: scale(1.10);
+  background-color: #4169e1;
+}

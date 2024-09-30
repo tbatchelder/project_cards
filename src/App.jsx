@@ -43,7 +43,7 @@ function App() {
         <h1>Find the Best Dog Tricks</h1>
         <p>Everything you and Blue need to impress.</p>
         <div className='category-nav'>
-          {category.map((cat) => {return (<button key={cat} onClick={()=>handleClick(cat)}>{cat}</button>)})}
+          {category.map((cat) => {return (<button className='category-button' key={cat} onClick={()=>handleClick(cat)}>{cat}</button>)})}
         </div>
       </header>
       <div className='content'>
